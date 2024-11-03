@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h1>User Information</h1>
+    <div id="user-info">
+        <p><strong>Name:</strong> <span id="name">John Doe</span></p>
+        <p><strong>Roll No:</strong> <span id="roll-no">123456</span></p>
+        <p><strong>Email:</strong> <span id="email">johndoe@example.com</span></p>
+        <p><strong>Mobile No:</strong> <span id="mobile-no">9876543210</span></p>
+    </div>
+    <button onclick="location.href='edit.html'">Edit Information</button>
+
+    <script>
+        // This function can be used to update the information displayed on the page.
+        function updateUserInfo(name, rollNo, email, mobileNo) {
+            document.getElementById('name').innerText = name;
+            document.getElementById('roll-no').innerText = rollNo;
+            document.getElementById('email').innerText = email;
+            document.getElementById('mobile-no').innerText = mobileNo;
+        }
+
+        // Load updated data from local storage if available
+        window.onload = function() {
+            const updatedInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (updatedInfo) {
+                updateUserInfo(updatedInfo.name, updatedInfo.rollNo, updatedInfo.email, updatedInfo.mobileNo);
+            }
+        }
+    </script>
+</body>
+</html>

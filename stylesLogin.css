@@ -1,0 +1,314 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.menu button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.menu button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+.menu button:hover {
+    background-color: #0056b3;
+}
+.sign-out {
+    background-color: #dc3545; /* Red color */
+}
+.sign-out:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+.content {
+    display: none;
+}
+.content.active {
+    display: block;
+}
+.form-group {
+    margin-bottom: 15px;
+    position: relative; /* For icon positioning */
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Space for icon */
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.form-group .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+}
+.form-group button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+.menu .sign-out {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.menu .sign-out:hover {
+    background-color: #c82333;
+}
+.success-message {
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+.strength-indicator {
+    display: flex;
+    margin-top: 10px;
+}
+.strength-bar {
+    flex: 1;
+    height: 5px;
+    margin: 0 2px;
+    background-color: #ddd;
+}
+.strength-bar.medium {
+    background-color: #f0ad4e;
+}
+.strength-bar.strong {
+    background-color: #28a745;
+}
+#password-requirements ul {
+    list-style: none;
+    padding-left: 0;
+}
+#password-requirements li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+#password-requirements li i {
+    margin-right: 10px;
+    color: #999;
+}
+#password-requirements li.valid {
+    color: green;
+}
+#password-requirements li.invalid {
+    color: red;
+}
+.input-container {
+position: relative;
+}
+
+.input-container input {
+padding-left: 40px; /* Space for the icon on the left */
+padding-right: 400px; /* Space for the eye icon on the right */
+}
+
+.input-container .input-icon {
+position: absolute;
+left: 10px; /* Space from the left */
+top: 50%;
+transform: translateY(-50%);
+color: #999;
+}
+
+.input-container .toggle-password {
+position: absolute;
+right: 50px; /* Space from the right */
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+color: #999;
+}
+
+
+#my-grievance {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#my-grievance h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#my-grievance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#my-grievance-table th, #my-grievance-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+#my-grievance-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+#my-grievance-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#my-grievance-table tr:hover {
+    background-color: #ddd;
+}
+
+#my-grievance-table th, #my-grievance-table td {
+    padding: 12px 15px;
+}
+
+#my-grievance-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#my-grievance-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+
+#grievance-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Maximum width */
+    background-color:#d4edda;;
+    border: 1px solid red;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other content */
+    display: none; /* Hidden by default */
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Below the modal */
+    display: none; /* Hidden by default */
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #28a745; /* Green background for the header */
+    color: white; /* Optional: change text color to white for contrast */
+}
+
+.modal-content {
+    padding: 20px; /* Inner padding for content */
+    margin-left: 20px; /* Shift content slightly to the right */
+    background-color: #d4edda; /* Light green background */
+    border-radius: 5px; /* Optional: round the corners */
+}
+.close-button {
+    cursor: pointer;
+    font-size: 24px; /* Increased font size for a larger cross */
+    color: white; /* Text color */
+    background-color: red; /* Background color of the square box */
+    border: none; /* No border */
+    padding: 2px; /* Adjust padding as needed */
+    border-radius: 3px; /* Optional: round the corners */
+    width: 24px; /* Increased width */
+    height: 24px; /* Increased height */
+    text-align: center; /* Center the text */
+    line-height: 20px; /* Align text vertically */
+    margin-left: 10px; /* Space from the title */
+}
+
+.close-button:hover {
+    background-color: darkred; /* Change color on hover for better UX */
+}.modal-content table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.modal-content th, .modal-content td {
+    border: 1px solid #ccc; /* Border for table cells */
+    padding: 8px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.modal-content th:nth-child(1) {
+    width: 20%; /* Width for Reply Date column */
+}
+
+.modal-content th:nth-child(2) {
+    width: 80%; /* Width for Reply column */
+}
+/* Centered custom alert box */
+ 
+.custom-alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Red background for error */
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000; /* Ensure it's above other elements */
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid black; /* Black outline */
+}
+
